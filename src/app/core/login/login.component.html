@@ -11,6 +11,7 @@
       <i class="pi pi-arrow-circle-right" *ngIf="password.value"></i>
       <input
         #password
+        (keyup.enter)="openDesktop()"
         autofocus
         pInputText
         autocomplete="off"

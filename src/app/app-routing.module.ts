@@ -13,6 +13,13 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
+    path: 'desktop',
+    loadChildren: () =>
+      import('./applications/applications.module').then(
+        (m) => m.ApplicationsModule
+      ),
+  },
+  {
     path: '',
     redirectTo: '/boot',
     pathMatch: 'full',
