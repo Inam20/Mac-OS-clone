@@ -1,3 +1,29 @@
-<p>
-  login works!
-</p>
+<div class="login-screen">
+  <img
+    src="assets/images/golf-ball.png"
+    alt="golf-ball"
+    class="login-screen_logo"
+  />
+  <h3 class="login-screen_username">Inamulhaq Inamdar</h3>
+
+  <div class="login-screen_input">
+    <div class="p-input-icon-right">
+      <i class="pi pi-arrow-circle-right" *ngIf="password.value"></i>
+      <input
+        #password
+        autofocus
+        pInputText
+        autocomplete="off"
+        class="p-inputtext-sm"
+        placeholder="Enter Password"
+        type="password"
+      />
+    </div>
+  </div>
+
+  <div class="login-screen_password-hint">Touch ID or Enter Password</div>
+
+  <div class="login-screen_machine-controls">
+    <app-machine-controls></app-machine-controls>
+  </div>
+</div>
