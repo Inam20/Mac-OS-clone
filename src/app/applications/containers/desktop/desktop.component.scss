@@ -10,3 +10,11 @@
   height: 100vh;
   overflow: hidden;
 }
+
+::ng-deep.p-sidebar {
+  @include bg-image(
+    $url: "/assets/images/desktop-background.jpg",
+    $size: cover,
+    $position: center
+  );
+}

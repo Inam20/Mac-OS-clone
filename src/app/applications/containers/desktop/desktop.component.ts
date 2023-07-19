@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./desktop.component.scss'],
 })
 export class DesktopComponent implements OnInit {
+  launchpadOpened = false;
   constructor() {}
 
   ngOnInit() {}

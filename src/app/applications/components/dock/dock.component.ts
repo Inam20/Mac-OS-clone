@@ -1,5 +1,12 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { MenuItem, TooltipOptions } from 'primeng/api';
+import { LAUNCHPAD } from 'src/app/shared/config/applications';
 import { dockItems } from 'src/app/shared/config/dock-items';
 
 @Component({
@@ -9,6 +16,8 @@ import { dockItems } from 'src/app/shared/config/dock-items';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DockComponent implements OnInit {
+  @Output() launchpadOpened = new EventEmitter();
+
   dockItems: MenuItem[] = [];
 
   defaultTooltipOptions: TooltipOptions = {
@@ -33,7 +42,11 @@ export class DockComponent implements OnInit {
           tooltipLabel: dockItem,
           ...this.defaultTooltipOptions,
         },
-        command: () => {},
+        command: () => {
+          if (dockItem === LAUNCHPAD) {
+            this.launchpadOpened.emit();
+          }
+        },
       };
     });
   }
